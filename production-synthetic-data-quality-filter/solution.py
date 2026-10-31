@@ -4,8 +4,6 @@ def filter_quality(examples: list[str], min_length: int, banned_phrases: list[st
     Return the kept examples in their original order.
     """
     # TODO: implement
-    if isinstance(banned_phrases, str):
-        banned_phrases = [banned_phrases]
         
     banned_lower = [phrase.lower() for phrase in banned_phrases]
     return[
