@@ -13,3 +13,6 @@ def generate_adversarial_variants(base_example: str, perturbations: dict[str, st
             temp=base_example.replace(a,b,1)
             r.append(temp)
     return r
+            
+    #i tried the other way around
+    #they wanted substrings not just space delimiter list
