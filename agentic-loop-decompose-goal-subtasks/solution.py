@@ -12,7 +12,6 @@ def order_subtasks(subtasks: list[str], dependencies: list[tuple[str, str]]) -> 
     """
     # TODO: Implement the dependency-respecting order from Theory.
     result=[]
-    completed=[]
 
     graph={task:[] for task in subtasks}
     indegree={task:0 for task in subtasks}
@@ -24,10 +23,9 @@ def order_subtasks(subtasks: list[str], dependencies: list[tuple[str, str]]) -> 
     while len(result)<len(subtasks):
 
         for task in subtasks:
-            if indegree[task]==0 and task not in completed:
+            if indegree[task]==0 and task not in result:
 
                 result.append(task)
-                completed.append(task)
 
                 for next_task in graph[task]:
                     indegree[next_task]-=1
