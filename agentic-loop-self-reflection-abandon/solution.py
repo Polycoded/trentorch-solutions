@@ -19,12 +19,12 @@ def find_abandon_point(
     count=0
     idx=0
     for observation in observations:
+        idx=idx+1
         if any(keyword in observation for keyword in failure_keywords):
             count+=1
+            if(count is max_consecutive_failures):
+                return idx
         else:
             count=0
-        idx=idx+1
-        if(count is max_consecutive_failures):
-            return idx
             
     return None
